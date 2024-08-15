@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tic Tac Toe"
+        style="@style/title"
+        android:textSize="50sp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="8dp"
+        android:elevation="12dp"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ft"
+        style="@style/card"
+        android:layout_width="381dp"
+        android:layout_height="86dp"
+        android:layout_below="@+id/title"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="30dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="5dp"
+        app:strokeWidth="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:layout_marginStart="20dp"
+            android:letterSpacing="0.03"
+            android:text="First Turn "
+            style="@style/title"
+            android:textStyle="bold"
+            android:textSize="22dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_o"
+            style="@style/button_0"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="right|center"
+            android:layout_marginHorizontal="10dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="12dp"
+            app:strokeColor="@color/light_cyan"
+            app:strokeWidth="5dp">
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                style="@style/o" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_x"
+            style="@style/button_0"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="right|center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginEnd="85dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="12dp"
+            app:strokeColor="@color/dark_blue"
+            app:strokeWidth="5dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                style="@style/cross" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/restart"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/ft"
+        android:layout_marginHorizontal="15dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="10dp"
+        app:strokeColor="@color/midShade_cyan"
+        style="@style/restart">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                style="@style/restart_icon"
+                android:layout_gravity="center|left"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Restart Game"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="23dp"
+                style="@style/restart_text"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/restart"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="155dp"
+        android:columnCount="3"
+        android:rowCount="3">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/light"
+            app:strokeColor="@color/dark_blue"
+            app:strokeWidth="3dp">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light"
+                android:textSize="1sp" />
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/light"
+            app:strokeColor="@color/dark_blue"
+            app:strokeWidth="3dp">
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light"
+                android:textSize="1sp" />
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/light"
+            app:strokeColor="@color/dark_blue"
+            app:strokeWidth="3dp">
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light"
+                android:textSize="1sp" />
+
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/light"
+            app:strokeColor="@color/dark_blue"
+            app:strokeWidth="3dp">
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light"
+                android:textSize="1sp" />
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/light"
+            app:strokeColor="@color/dark_blue"
+            app:strokeWidth="3dp">
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light"
+                android:textSize="1sp" />
+
+            <ImageView
+                android:id="@+id/image5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/light"
+            app:strokeColor="@color/dark_blue"
+            app:strokeWidth="3dp">
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light"
+                android:textSize="1sp" />
+
+            <ImageView
+                android:id="@+id/image6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/light"
+            app:strokeColor="@color/dark_blue"
+            app:strokeWidth="3dp">
+
+            <TextView
+                android:id="@+id/text7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light"
+                android:textSize="1sp" />
+
+            <ImageView
+                android:id="@+id/image7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/light"
+            app:strokeColor="@color/dark_blue"
+            app:strokeWidth="3dp">
+
+            <TextView
+                android:id="@+id/text8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light"
+                android:textSize="1sp" />
+
+            <ImageView
+                android:id="@+id/image8"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/light"
+            app:strokeColor="@color/dark_blue"
+            app:strokeWidth="3dp">
+
+            <TextView
+                android:id="@+id/text9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light"
+                android:textSize="1sp" />
+
+            <ImageView
+                android:id="@+id/image9"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </GridLayout>
+
+    <View
+        style="@style/WinningLine"
+        android:id="@+id/winning_line"
+        android:backgroundTint="@color/red"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/restart"
+        android:layout_marginTop="210dp"
+        android:visibility="invisible" />
+
+    <View
+        style="@style/WinningLine"
+        android:id="@+id/winning_line_2"
+        android:backgroundTint="@color/red"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/restart"
+        android:layout_marginTop="310dp"
+        android:visibility="invisible" />
+
+    <View
+        style="@style/WinningLine"
+        android:id="@+id/winning_line_3"
+        android:backgroundTint="@color/red"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/restart"
+        android:layout_marginTop="410dp"
+        android:visibility="invisible" />
+
+    <View
+        style="@style/WinningLineVer"
+        android:id="@+id/winning_line_4"
+        android:backgroundTint="@color/red"
+        android:layout_centerHorizontal="false"
+        android:layout_below="@+id/restart"
+        android:layout_marginTop="175dp"
+        android:layout_marginStart="104dp"
+        android:visibility="invisible" />
+
+    <View
+        style="@style/WinningLine"
+        android:id="@+id/winning_line_5"
+        android:backgroundTint="@color/red"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/restart"
+        android:layout_marginTop="310dp"
+        android:rotation="90"
+        android:visibility="invisible"/>
+
+    <View
+        style="@style/WinningLineVer"
+        android:id="@+id/winning_line_6"
+        android:backgroundTint="@color/red"
+        android:layout_below="@+id/restart"
+        android:layout_marginTop="175dp"
+        android:layout_marginEnd="104dp"
+        android:layout_alignParentEnd="true"
+        android:visibility="invisible"/>
+
+    <View
+        style="@style/WinningLinedia"
+        android:id="@+id/winning_line_7"
+        android:backgroundTint="@color/red"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/restart"
+        android:layout_marginTop="310dp"
+        android:rotation="45"
+        android:visibility="invisible"/>
+
+    <View
+        style="@style/WinningLinedia"
+        android:id="@+id/winning_line_8"
+        android:backgroundTint="@color/red"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/restart"
+        android:layout_marginTop="310dp"
+        android:rotation="135"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TicTacToe" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/light_cyan</item>
+        <item name="android:backgroundTint">@color/light_cyan</item>
+    </style>
+
+    <style name="Theme.TicTacToe" parent="Base.Theme.TicTacToe" />
+
+    <style name="title">
+        <item name="android:textSize">45sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:fontFamily">@font/typo</item>
+        <item name="android:letterSpacing">0.07</item>
+        </style>
+
+    <style name="button_0">
+        <item name="android:backgroundTint">@color/light_cyan</item>
+    </style>
+
+    <style name="card">
+        <item name="android:backgroundTint">@color/light</item>
+        <item name="android:strokeColor">@color/dark_blue</item>
+    </style>
+
+    <style name="restart">
+        <item name="android:backgroundTint">@color/dark_blue</item>
+    </style>
+
+    <style name="restart_text">
+        <item name="android:textColor">@color/light_cyan</item>
+        <item name="android:fontFamily">@font/typo</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="restart_icon">
+        <item name="android:src">@drawable/reset2</item>
+    </style>
+
+    <style name="cross">
+        <item name="android:src">@drawable/cross</item>
+    </style>
+
+    <style name="o">
+        <item name="android:src">@drawable/o</item>
+    </style>
+
+    <style name="WinningLine">
+        <item name="android:layout_width">280dp</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:background">@color/red</item>
+    </style>
+
+    <style name="WinningLineVer">
+        <item name="android:layout_width">10dp</item>
+        <item name="android:layout_height">280dp</item>
+        <item name="android:background">@color/red</item>
+    </style>
+
+    <style name="WinningLinedia">
+        <item name="android:layout_width">380dp</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:background">@color/red</item>
+    </style>
+
+
+    <style name="text">
+        <item name="android:textColor">@color/light_cyan</item>
+        <item name="android:fontFamily">@font/typo</item>
+    </style>
+
+    <style name="dialog_button">
+        <item name="android:backgroundTint">@color/light_cyan</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:fontFamily">@font/typo</item>
+    </style>
+
+</resources>
