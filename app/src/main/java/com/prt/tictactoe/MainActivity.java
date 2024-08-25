@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     TextView text1,text2, text3, text4, text5, text6, text7, text8,text9;
     ImageView image1, image2, image3, image4, image5, image6, image7, image8, image9;
     MaterialCardView restart;
+    int xWin = 0, oWin = 0, Draw = 0;
+    TextView xCount, oCount, drawCount;
     View winningLine1,winningLine2,winningLine3,winningLine4,winningLine5,winningLine6,winningLine7,winningLine8;
 
     @Override
@@ -49,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         image8 = findViewById(R.id.image8);
         image9 = findViewById(R.id.image9);
         restart = findViewById(R.id.restart);
+        xCount = findViewById(R.id.xCount);
+        oCount = findViewById(R.id.oCount);
+        drawCount = findViewById(R.id.drawCount);
         winningLine1 = findViewById(R.id.winning_line);
         winningLine2 = findViewById(R.id.winning_line_2);
         winningLine3 = findViewById(R.id.winning_line_3);
@@ -66,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
         text7 = findViewById(R.id.text7);
         text8 = findViewById(R.id.text8);
         text9 = findViewById(R.id.text9);
+
+        oCount.setText(String.valueOf(oWin));
+        xCount.setText(String.valueOf(xWin));
+        drawCount.setText(String.valueOf(Draw));
 
         //FirstTurn onClick listener
         btn_x.setOnClickListener(v -> {
@@ -185,45 +194,55 @@ public class MainActivity extends AppCompatActivity {
         if (checkLine(text1,text2,text3) ) {
 
             showDialog(text1.getText().toString());
+            WinningCounter(text1);
             winningLine1.setVisibility(View.VISIBLE);
 
         } else if (checkLine(text4,text5,text6)) {
 
             showDialog(text4.getText().toString());
+            WinningCounter(text4);
             winningLine2.setVisibility(View.VISIBLE);
 
         } else if (checkLine(text7,text8,text9)) {
 
             showDialog(text7.getText().toString());
+            WinningCounter(text7);
             winningLine3.setVisibility(View.VISIBLE);
 
         } else if (checkLine(text1,text4,text7)) {
 
             showDialog(text1.getText().toString());
+            WinningCounter(text1);
             winningLine4.setVisibility(View.VISIBLE);
 
         } else if (checkLine(text2,text5,text8)) {
 
             showDialog(text2.getText().toString());
+            WinningCounter(text2);
             winningLine5.setVisibility(View.VISIBLE);
 
         } else if (checkLine(text3,text6,text9)) {
 
             showDialog(text3.getText().toString());
+            WinningCounter(text3);
             winningLine6.setVisibility(View.VISIBLE);
 
         } else if (checkLine(text1,text5,text9)) {
 
             showDialog(text1.getText().toString());
+            WinningCounter(text1);
             winningLine7.setVisibility(View.VISIBLE);
 
         } else if (checkLine(text3,text5,text7)) {
 
             showDialog(text3.getText().toString());
+            WinningCounter(text3);
             winningLine8.setVisibility(View.VISIBLE);
 
         } else if (count == 9) {
             showDialog("draw");
+            Draw++;
+            drawCount.setText(String.valueOf(Draw));
         }
     }
 
@@ -254,5 +273,16 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    public void WinningCounter(TextView Text){
+        if(Text.getText().equals("x")){
+            xWin = xWin + 1;
+            xCount.setText(String.valueOf(xWin));
+        }else if (Text.getText().equals("o")){
+            oWin = oWin + 1;
+            oCount.setText(String.valueOf(oWin));
+        }
+    }
 }
+
+
 
